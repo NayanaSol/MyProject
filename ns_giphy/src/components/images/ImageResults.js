@@ -15,12 +15,12 @@ const ImageResults = (props) => {
           </p>
         }
       >
-        <div className="card-list">
+        <div className="container">
           {props.data.map((gif, key) => (
-            <div className="container" key={key}>
+            <div className="item" key={key}>
               <img
                 src={gif.images.fixed_width.url}
-                className="card--image"
+                className="card-image"
                 alt={gif.title}
               />
             </div>

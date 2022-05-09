@@ -1,16 +1,55 @@
 .container {
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
 }
 
-.card-list {
-  column-count: 3;
+.item {
+  width: "32%";
+  margin-bottom: 2%;
+  border-radius: 3px;
+  padding: 5px;
+}
+/* Re-order items into rows */
+.item:nth-child(3n + 1) {
+  order: 6;
+}
+.item:nth-child(3n + 2) {
+  order: 4;
+}
+.item:nth-child(3n) {
+  order: 8;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: 32%;
+  padding-bottom: 18%; 
+  margin-bottom: 2%; 
+} */
+
+.container::before,
+.container::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
 }
 
 .card {
   margin-bottom: 1rem;
-  display: flex;
 }
 
 .card-image {
@@ -27,4 +66,5 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 24px;
   line-height: 10px;
+  width: 88%;
 }
